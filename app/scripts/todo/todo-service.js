@@ -9,6 +9,7 @@ var ToDoServiceModule;
         }
         return Task;
     })();
+    ToDoServiceModule.Task = Task;
     var ToDoService = (function () {
         function ToDoService($window) {
             this.$window = $window;
@@ -36,5 +37,6 @@ var ToDoServiceModule;
         ToDoService.$inject = ['$window'];
         return ToDoService;
     })();
+    ToDoServiceModule.ToDoService = ToDoService;
     angular.module('tutorialAngularTypescriptApp').service('ToDoService', ToDoService);
 })(ToDoServiceModule || (ToDoServiceModule = {}));

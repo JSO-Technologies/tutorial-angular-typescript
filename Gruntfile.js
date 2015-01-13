@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 
     typescript: {
       base: {
-        src: ['<%= yeoman.app %>/scripts/**/*.ts'],
+        src: ['<%= yeoman.app %>/scripts/**/*.ts', 'test/spec/{,*/}*.ts'],
         options: {
           module: 'amd',
           target: 'es5'
@@ -402,6 +402,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
+    'typescript',
     'karma'
   ]);
 
