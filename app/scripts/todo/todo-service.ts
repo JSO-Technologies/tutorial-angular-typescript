@@ -3,11 +3,11 @@
 module ToDoServiceModule {
   'use strict';
 
-  class Task {
+  export class Task {
     constructor(public label: String, public done: Boolean) {}
   }
 
-  class ToDoService {
+  export class ToDoService {
     _tasks: Task[];
 
     static $inject = ['$window']

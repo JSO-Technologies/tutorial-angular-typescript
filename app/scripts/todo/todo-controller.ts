@@ -14,7 +14,7 @@ module ToDoControllerModule {
       this.taskLabel = '';
     }
 
-    toggleDone(task) {
+    toggleDone(task: ToDoServiceModule.Task) {
       this.todoService.toggleDone(task);
     }
 
