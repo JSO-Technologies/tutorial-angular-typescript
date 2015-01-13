@@ -1,25 +1,29 @@
 /// <reference path="../../definition/angularjs/angular.d.ts" />
-'use strict';
 
-class ToDoCtrl {
-  taskLabel: String;
+module ToDoControllerModule {
+  'use strict';
 
-  static $inject = ['ToDoService']
-  constructor(public todoService) {}
+  class ToDoCtrl {
+    taskLabel: String;
 
-  create() {
-    this.todoService.create(this.taskLabel);
-    this.taskLabel = '';
+    static $inject = ['ToDoService']
+    constructor(public todoService) {}
+
+    create() {
+      this.todoService.create(this.taskLabel);
+      this.taskLabel = '';
+    }
+
+    toggleDone(task) {
+      this.todoService.toggleDone(task);
+    }
+
+    getTasks() {
+      return this.todoService.tasks;
+    }
   }
 
-  toggleDone(task: Task) {
-    this.todoService.toggleDone(task);
-  }
+  angular.module('tutorialAngularTypescriptApp')
+    .controller('ToDoCtrl', ToDoCtrl);
 
-  getTasks() {
-    return this.todoService.tasks;
-  }
 }
-
-angular.module('tutorialAngularTypescriptApp')
-  .controller('ToDoCtrl', ToDoCtrl);
