@@ -1,0 +1,14 @@
+<div>
+  <div class="jumbotron">
+    <h1>Create a new task</h1>
+    <form ng-submit="ctrl.create()" class="lead">
+      <input ng-model="ctrl.taskLabel" ng-required="true"/>
+    </form>
+  </div>
+
+  <ul>
+    <li ng-repeat="task in ctrl.getTasks() track by $index">
+      <input type="checkbox" ng-checked="task.done" ng-click="ctrl.toggleDone(task)"/>
+      <span ng-class="{'strike' : task.done}">{{ task.label }}</span></li>
+  </ul>
+</div>
