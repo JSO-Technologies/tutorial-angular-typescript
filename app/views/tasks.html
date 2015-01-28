@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="task in taskCtrl.tasks track by $index">
+    <input type="checkbox" ng-checked="task.done" ng-click="taskCtrl.toggleDone(task)"/>
+    <span ng-class="{'strike' : task.done}">{{ task.label }}</span></li>
+</ul>

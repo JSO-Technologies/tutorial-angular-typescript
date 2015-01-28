@@ -2,6 +2,8 @@
 /// <reference path="../../../app/scripts/todo/todo-service.ts" />
 
 class LocalStorageMock {
+  'use strict';
+
   _tasks: String;
 
   constructor(empty: Boolean) {
@@ -20,6 +22,8 @@ class LocalStorageMock {
 }
 
 describe('ToDoService', () => {
+  'use strict';
+
   var windowMock;
   var service: ToDoServiceModule.ToDoService;
 

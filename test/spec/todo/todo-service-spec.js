@@ -15,6 +15,7 @@ var LocalStorageMock = (function () {
     return LocalStorageMock;
 })();
 describe('ToDoService', function () {
+    'use strict';
     var windowMock;
     var service;
     describe('with empty localStorage', function () {

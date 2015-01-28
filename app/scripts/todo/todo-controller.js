@@ -10,9 +10,6 @@ var ToDoControllerModule;
             this.todoService.create(this.taskLabel);
             this.taskLabel = '';
         };
-        ToDoCtrl.prototype.toggleDone = function (task) {
-            this.todoService.toggleDone(task);
-        };
         ToDoCtrl.prototype.getTasks = function () {
             return this.todoService.tasks;
         };
